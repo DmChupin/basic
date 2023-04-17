@@ -33,7 +33,12 @@
 			<input matInput placeholder="" value="" />
 		</mat-form-field>
 		<mat-slide-toggle color="primary">Get notifications</mat-slide-toggle>
-		<button mat-raised-button color="primary" class="login-form__button">
+		<button
+			mat-raised-button
+			color="primary"
+			class="login-form__button"
+			[routerLink]="['/sign-in']"
+		>
 			Sign Up
 		</button>
 		<div class="login-form__account">

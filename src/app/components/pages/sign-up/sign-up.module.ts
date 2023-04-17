@@ -8,10 +8,9 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { RouterModule } from '@angular/router';
-import { SignUpRoutingModule } from './sign-un-routing.module';
+import { SignUpRoutingModule } from './sign-up-routing.module';
 
 @NgModule({
 	declarations: [SignUpComponent],

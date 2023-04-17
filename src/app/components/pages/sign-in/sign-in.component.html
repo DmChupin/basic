@@ -10,7 +10,12 @@
 			<mat-label>password</mat-label>
 			<input matInput placeholder="" value="" />
 		</mat-form-field>
-		<button mat-raised-button color="primary" class="login-form__button">
+		<button
+			mat-raised-button
+			color="primary"
+			class="login-form__button"
+			[routerLink]="['/rooms']"
+		>
 			Sign In
 		</button>
 		<div class="login-form__account">
