@@ -1,0 +1,20 @@
+<table mat-table class="mat-elevation-z8 demo-table" [dataSource]="dataSource">
+	<ng-container
+		*ngFor="let column of columns"
+		[matColumnDef]="column.columnDef"
+	>
+		<th *matHeaderCellDef mat-header-cell>
+			{{ column.header }}
+		</th>
+		<td *matCellDef="let row" mat-cell>
+			{{ column.cell(row) }}
+		</td>
+	</ng-container>
+
+	<tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+	<tr *matRowDef="let row; columns: displayedColumns" mat-row></tr>
+</table>
+<mat-paginator
+	aria-label="Select page of users"
+	[pageSizeOptions]="[5, 10, 25, 100]"
+></mat-paginator>
