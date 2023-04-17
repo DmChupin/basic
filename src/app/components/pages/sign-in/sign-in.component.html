@@ -1,1 +1,27 @@
-<p>sign-in works!</p>
+<div class="login-form__wrapper">
+	<div class="login-form__flex-wrapper">
+		<h1>Sign In</h1>
+
+		<mat-form-field class="login-form__label">
+			<mat-label>e-mail</mat-label>
+			<input matInput placeholder="" value="" />
+		</mat-form-field>
+		<mat-form-field class="login-form__label">
+			<mat-label>password</mat-label>
+			<input matInput placeholder="" value="" />
+		</mat-form-field>
+		<button mat-raised-button color="primary" class="login-form__button">
+			Sign In
+		</button>
+		<div class="login-form__account">
+			<span> Don't have an account?</span>
+			<button
+				mat-stroked-button
+				color="primary"
+				[routerLink]="['/sign-up']"
+			>
+				Sign up
+			</button>
+		</div>
+	</div>
+</div>

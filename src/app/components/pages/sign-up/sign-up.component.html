@@ -1,0 +1,50 @@
+<div class="login-form__wrapper">
+	<div class="login-form__flex-wrapper">
+		<h1>Sign Up</h1>
+
+		<mat-form-field class="login-form__label">
+			<mat-label>Name</mat-label>
+			<input matInput placeholder="" value="Name" />
+		</mat-form-field>
+		<mat-form-field class="login-form__label">
+			<mat-label>Surname</mat-label>
+			<input matInput placeholder="" value="Surname" />
+		</mat-form-field>
+		<mat-radio-group color="primary">
+			<mat-radio-button value="1">Man</mat-radio-button>
+			<mat-radio-button value="2">Women</mat-radio-button>
+		</mat-radio-group>
+
+		<mat-form-field appearance="fill" class="login-form__calendar">
+			<mat-label>Choose a date</mat-label>
+			<input matInput [matDatepicker]="picker" />
+			<mat-hint>MM/DD/YYYY</mat-hint>
+			<mat-datepicker-toggle matSuffix [for]="picker">
+			</mat-datepicker-toggle>
+			<mat-datepicker #picker></mat-datepicker>
+		</mat-form-field>
+
+		<mat-form-field class="login-form__label">
+			<mat-label>e-mail</mat-label>
+			<input matInput placeholder="" value="" />
+		</mat-form-field>
+		<mat-form-field class="login-form__label">
+			<mat-label>password</mat-label>
+			<input matInput placeholder="" value="" />
+		</mat-form-field>
+		<mat-slide-toggle color="primary">Get notifications</mat-slide-toggle>
+		<button mat-raised-button color="primary" class="login-form__button">
+			Sign Up
+		</button>
+		<div class="login-form__account">
+			<span> Do you already have an account?</span>
+			<button
+				mat-stroked-button
+				color="primary"
+				[routerLink]="['/sign-in']"
+			>
+				Sign in
+			</button>
+		</div>
+	</div>
+</div>
