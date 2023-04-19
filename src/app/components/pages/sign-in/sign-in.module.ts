@@ -6,11 +6,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { RouterModule } from '@angular/router';
 import { SignInRoutingModule } from './sign-in-routing.module';
-import { TableModule } from '../../common/table/table.module';
 
 @NgModule({
 	declarations: [SignInComponent],
-	imports: [CommonModule, MatInputModule, MatButtonModule, RouterModule, SignInRoutingModule, TableModule],
+	imports: [CommonModule, MatInputModule, MatButtonModule, RouterModule, SignInRoutingModule],
 	exports: [SignInComponent],
 })
 export class SignInModule {}

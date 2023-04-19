@@ -1,19 +1,23 @@
 <mat-card class="room-card__wrapper">
-	<mat-card-actions>
-		<button mat-button>LIKE</button>
-		<button mat-button>SHARE</button>
-	</mat-card-actions>
+	<button
+		mat-icon-button
+		aria-label="Example icon-button with heart icon"
+		class="room-card_icon"
+	>
+		<mat-icon>favorite</mat-icon>
+	</button>
 	<img
 		mat-card-image
-		src="https://material.angular.io/assets/img/examples/shiba2.jpg"
-		alt="Photo of a Shiba Inu"
+		src="https://cdn.loewshotels.com/loewshotels.com-2466770763/cms/cache/v2/5f5a6e0d12749.jpg/1920x1080/fit/80/86e685af18659ee9ecca35c465603812.jpg"
+		alt="Photo of a room"
 	/>
-	<mat-card-content>
-		<p>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium
-			labore molestias voluptatibus nulla, omnis quia nostrum reiciendis
-			ad suscipit placeat nemo accusamus neque dolorem natus distinctio
-			esse eaque ab expedita?
-		</p>
-	</mat-card-content>
+	<div class="room-card__fields" [routerLink]="['/room']">
+		<span class="room-card__hotel-name"> Hotel name </span>
+		<span class="room-card__hotel-rating"> 7.7/10 </span>
+	</div>
+	<mat-divider class="room-card__divider"></mat-divider>
+	<div class="room-card__fields">
+		<span class="room-card__room-price"> 9990$ </span>
+		<span class="room-card__hotel-reviews">3 reviews </span>
+	</div>
 </mat-card>

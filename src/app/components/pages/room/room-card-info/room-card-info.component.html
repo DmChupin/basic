@@ -1,0 +1,23 @@
+<div class="room-card-info_wrapper">
+	<div class="room-card-info_wrapper-gallery">
+		<ng-template
+			let-currentImage
+			let-next="next"
+			let-back="back"
+			[appCarousel]="images"
+		>
+			<button class="room-card-info_image-icons" (click)="back()">
+				<mat-icon> </mat-icon>
+			</button>
+			<img
+				mat-card-image
+				alt="Product photo"
+				width="400px"
+				[src]="currentImage.url"
+			/>
+			<button class="room-card-info_image-icons right" (click)="next()">
+				<mat-icon> </mat-icon>
+			</button>
+		</ng-template>
+	</div>
+</div>

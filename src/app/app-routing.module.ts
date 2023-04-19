@@ -19,6 +19,11 @@ const routes: Routes = [
 		path: 'rooms',
 		loadChildren: () => import('./components/pages/room/room-list/room-list.module').then(m => m.RoomListModule),
 	},
+	{
+		path: 'room',
+		loadChildren: () =>
+			import('./components/pages/room/room-card-info/room-card-info.module').then(m => m.RoomCardInfoModule),
+	},
 ];
 
 @NgModule({
