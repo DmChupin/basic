@@ -1,7 +1,30 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+const routes: Routes = [
+	{
+		path: '',
+		pathMatch: 'full',
+		redirectTo: '/sign-in',
+	},
+	{
+		path: 'sign-in',
+		loadChildren: () => import('./components/pages/sign-in/sign-in.module').then(m => m.SignInModule),
+	},
+	{
+		path: 'sign-up',
+		loadChildren: () => import('./components/pages/sign-up/sign-up.module').then(m => m.SignUpModule),
+	},
+	{
+		path: 'rooms',
+		loadChildren: () => import('./components/pages/room/room-list/room-list.module').then(m => m.RoomListModule),
+	},
+	{
+		path: 'room',
+		loadChildren: () =>
+			import('./components/pages/room/room-card-info/room-card-info.module').then(m => m.RoomCardInfoModule),
+	},
+];
 
 @NgModule({
 	imports: [RouterModule.forRoot(routes)],
