@@ -4,10 +4,12 @@ import { RoomCardInfoComponent } from './room-card-info.component';
 import { CarouselModule } from 'src/app/components/common/carousel/carousel.module';
 import { MatIconModule } from '@angular/material/icon';
 import { RoomCardInfoRoutingModule } from './room-card-info-routing.module';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
 	declarations: [RoomCardInfoComponent],
-	imports: [CommonModule, CarouselModule, MatIconModule, RoomCardInfoRoutingModule],
+	imports: [CommonModule, CarouselModule, MatIconModule, RoomCardInfoRoutingModule, MatGridListModule, MatListModule],
 	exports: [RoomCardInfoComponent],
 })
 export class RoomCardInfoModule {}
