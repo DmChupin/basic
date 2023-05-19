@@ -1,13 +1,9 @@
 <div class="room-list__wrapper">
 	<app-room-filters> </app-room-filters>
 	<div class="room-list__wrapper-cards">
-		<app-room-card></app-room-card>
-		<app-room-card></app-room-card>
-		<app-room-card></app-room-card>
-		<app-room-card></app-room-card>
-		<app-room-card></app-room-card>
-		<app-room-card></app-room-card>
-		<app-room-card></app-room-card>
-		<app-room-card></app-room-card>
+		<app-room-card
+			*ngFor="let hotel of hotels"
+			[hotel]="hotel"
+		></app-room-card>
 	</div>
 </div>
