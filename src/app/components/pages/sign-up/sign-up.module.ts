@@ -11,6 +11,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { RouterModule } from '@angular/router';
 import { SignUpRoutingModule } from './sign-up-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
 	declarations: [SignUpComponent],
@@ -25,6 +26,7 @@ import { SignUpRoutingModule } from './sign-up-routing.module';
 		MatSlideToggleModule,
 		RouterModule,
 		SignUpRoutingModule,
+		ReactiveFormsModule,
 	],
 	exports: [SignUpComponent],
 })

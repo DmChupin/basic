@@ -6,18 +6,14 @@
 	>
 		<mat-icon>favorite</mat-icon>
 	</button>
-	<img
-		mat-card-image
-		src="https://cdn.loewshotels.com/loewshotels.com-2466770763/cms/cache/v2/5f5a6e0d12749.jpg/1920x1080/fit/80/86e685af18659ee9ecca35c465603812.jpg"
-		alt="Photo of a room"
-	/>
+	<img mat-card-image src="{{ hotel.image }}" alt="Photo of a room" />
 	<div class="room-card__fields" [routerLink]="['/room']">
-		<span class="room-card__hotel-name"> Hotel name </span>
-		<span class="room-card__hotel-rating"> 7.7/10 </span>
+		<span class="room-card__hotel-name"> {{ hotel.name }} </span>
+		<span class="room-card__hotel-rating"> {{ hotel.rating }}/10 </span>
 	</div>
 	<mat-divider class="room-card__divider"></mat-divider>
 	<div class="room-card__fields">
-		<span class="room-card__room-price"> 9990$ </span>
+		<span class="room-card__room-price"> {{ hotel.price }}$ </span>
 		<span class="room-card__hotel-reviews">3 reviews </span>
 	</div>
 </mat-card>
