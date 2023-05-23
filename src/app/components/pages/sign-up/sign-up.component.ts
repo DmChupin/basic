@@ -12,14 +12,6 @@ import { UsersService } from 'src/app/shared/services/users/users.service';
 export class SignUpComponent {
 	constructor(private readonly service: UsersService, private router: Router) {}
 
-	// surname = new FormControl('');
-	// name = new FormControl('');
-	// password = new FormControl('');
-	// male = new FormControl(0);
-	// birthDate = new FormControl('');
-	// email = new FormControl('');
-	// notifications = new FormControl('');
-
 	signUpForm = new FormGroup({
 		surname: new FormControl(''),
 		name: new FormControl(''),

@@ -13,13 +13,11 @@ export class SignInComponent {
 	constructor(private readonly service: UsersService, private router: Router) {}
 
 	email = new FormControl('');
-	fullname = new FormControl('');
 	password = new FormControl('');
 
 	login() {
 		const data: ISignInReq = {
 			email: this.email.value,
-			fullname: this.fullname.value,
 			password: this.password.value,
 		};
 

@@ -1,0 +1,125 @@
+<div class="hotel-filters__wrapper" [formGroup]="filterFormGroup">
+	<div class="hotel-filters__wrapper-block">
+		<p class="hotel-filters__span">Search</p>
+		<mat-form-field class="hotel-filters__label">
+			<mat-label>Destination name</mat-label>
+			<input
+				matInput
+				placeholder=""
+				value=""
+				formControlName="destination"
+			/>
+		</mat-form-field>
+
+		<mat-form-field appearance="fill">
+			<mat-label>Arrival date</mat-label>
+			<mat-date-range-input [rangePicker]="pickerArrival">
+				<input
+					matStartDate
+					placeholder="Start date"
+					formControlName="arrivalDateStart"
+				/>
+				<input
+					matEndDate
+					placeholder="End date"
+					formControlName="arrivalDateEnd"
+				/>
+			</mat-date-range-input>
+			<mat-datepicker-toggle
+				matIconSuffix
+				[for]="pickerArrival"
+			></mat-datepicker-toggle>
+			<mat-date-range-picker #pickerArrival></mat-date-range-picker>
+		</mat-form-field>
+
+		<mat-form-field appearance="fill">
+			<mat-label>Departure date</mat-label>
+			<mat-date-range-input [rangePicker]="pickerDeparture">
+				<input
+					matStartDate
+					placeholder="Start date"
+					formControlName="departureDateStart"
+				/>
+				<input
+					matEndDate
+					placeholder="End date"
+					formControlName="departureDateEnd"
+				/>
+			</mat-date-range-input>
+			<mat-datepicker-toggle
+				matIconSuffix
+				[for]="pickerDeparture"
+			></mat-datepicker-toggle>
+			<mat-date-range-picker #pickerDeparture></mat-date-range-picker>
+		</mat-form-field>
+
+		<div class="hotel-filters__counter">
+			<span> Adult: </span>
+			<div class="hotel-filters__persons-counter">
+				<button class="hotel-filters__counter-button">-</button>
+				<input
+					readonly
+					formControlName="adultCounter"
+					class="hotel-filters__input"
+				/>
+				<button class="hotel-filters__counter-button">+</button>
+			</div>
+		</div>
+		<div class="hotel-filters__counter">
+			<span> Children: </span>
+			<div class="hotel-filters__persons-counter">
+				<button class="hotel-filters__counter-button">-</button>
+				<input
+					readonly
+					formControlName="childCounter"
+					class="hotel-filters__input"
+				/>
+				<button class="hotel-filters__counter-button">+</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="hotel-filters__wrapper-block">
+		<p class="hotel-filters__span">Filter by:</p>
+		<mat-divider></mat-divider>
+
+		<p class="hotel-filters__filter-name">Price range:</p>
+		<mat-form-field class="hotel-filters__label">
+			<mat-label>From</mat-label>
+			<input matInput placeholder="" formControlName="priceFrom" />
+		</mat-form-field>
+		<mat-form-field class="hotel-filters__label">
+			<mat-label>To</mat-label>
+			<input matInput placeholder="" formControlName="priceTo" />
+		</mat-form-field>
+
+		<mat-divider></mat-divider>
+
+		<p class="hotel-filters__filter-name">Facilities:</p>
+		<mat-checkbox formControlName="wifi">WI-FI</mat-checkbox>
+		<mat-checkbox formControlName="condition">Air conditioner</mat-checkbox>
+		<mat-checkbox formControlName="workplace">Workplace</mat-checkbox>
+
+		<mat-divider></mat-divider>
+		<p class="hotel-filters__filter-name">Accomodation:</p>
+		<mat-checkbox formControlName="smoking">Smoking</mat-checkbox>
+		<mat-checkbox formControlName="pets">Pets</mat-checkbox>
+		<mat-checkbox formControlName="guests">Guests</mat-checkbox>
+
+		<mat-divider></mat-divider>
+		<p class="hotel-filters__filter-name">Availability:</p>
+		<mat-checkbox formControlName="corridor">wide corridor</mat-checkbox>
+		<mat-checkbox formControlName="ramps"
+			>ramps for the disabled</mat-checkbox
+		>
+
+		<button
+			mat-raised-button
+			color="primary"
+			class="hotel-filters__button"
+			(click)="filter()"
+		>
+			Search
+		</button>
+	</div>
+</div>

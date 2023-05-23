@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RoomFiltersComponent } from './room-filters.component';
+import { RoomFiltersComponent } from './hotel-filters.component';
 
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -10,13 +10,14 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
 	declarations: [RoomFiltersComponent],
 	imports: [
 		CommonModule,
+		ReactiveFormsModule,
 		MatDatepickerModule,
 		MatFormFieldModule,
 		MatNativeDateModule,

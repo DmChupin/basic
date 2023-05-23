@@ -17,7 +17,8 @@ const routes: Routes = [
 	},
 	{
 		path: 'rooms',
-		loadChildren: () => import('./components/pages/room/room-list/room-list.module').then(m => m.RoomListModule),
+		loadChildren: () =>
+			import('./components/pages/hotel/hotel-list/hotel-list.module').then(m => m.HotelListModule),
 	},
 	{
 		path: 'room',

@@ -3,11 +3,11 @@ import { IHotels } from 'src/app/shared/interfaces/hotels.interface';
 import { HotelsService } from 'src/app/shared/services/hotels/hotels.service';
 
 @Component({
-	selector: 'app-room-list',
-	templateUrl: './room-list.component.html',
-	styleUrls: ['./room-list.component.less'],
+	selector: 'app-hotel-list',
+	templateUrl: './hotel-list.component.html',
+	styleUrls: ['./hotel-list.component.less'],
 })
-export class RoomListComponent implements OnInit {
+export class HotelListComponent implements OnInit {
 	constructor(private readonly service: HotelsService, private changeDetectorRef: ChangeDetectorRef) {}
 
 	hotels: IHotels[] = [];
