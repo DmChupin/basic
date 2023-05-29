@@ -1,5 +1,5 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { IHotels } from 'src/app/shared/interfaces/hotels.interface';
+import { Component, OnInit } from '@angular/core';
+import { IHotel } from 'src/app/shared/interfaces/hotels.interface';
 import { HotelsService } from 'src/app/shared/services/hotels/hotels.service';
 
 @Component({
@@ -8,9 +8,9 @@ import { HotelsService } from 'src/app/shared/services/hotels/hotels.service';
 	styleUrls: ['./hotel-list.component.less'],
 })
 export class HotelListComponent implements OnInit {
-	constructor(private readonly service: HotelsService, private changeDetectorRef: ChangeDetectorRef) {}
+	constructor(private readonly service: HotelsService) {}
 
-	hotels: IHotels[] = [];
+	hotels: IHotel[] = [];
 	getHotels(): void {
 		this.service.getHotels().subscribe(hotels => (this.hotels = hotels));
 	}

@@ -16,14 +16,14 @@ const routes: Routes = [
 		loadChildren: () => import('./components/pages/sign-up/sign-up.module').then(m => m.SignUpModule),
 	},
 	{
-		path: 'rooms',
+		path: 'hotels',
 		loadChildren: () =>
 			import('./components/pages/hotel/hotel-list/hotel-list.module').then(m => m.HotelListModule),
 	},
 	{
-		path: 'room',
+		path: 'hotels/:id',
 		loadChildren: () =>
-			import('./components/pages/room/room-card-info/room-card-info.module').then(m => m.RoomCardInfoModule),
+			import('./components/pages/hotel/hotel-card-info/hotel-card-info.module').then(m => m.HotelCardInfoModule),
 	},
 ];
 

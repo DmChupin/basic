@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IHotels } from 'src/app/shared/interfaces/hotels.interface';
+import { IHotel } from 'src/app/shared/interfaces/hotels.interface';
 
 @Component({
 	selector: 'app-room-card',
@@ -7,7 +7,7 @@ import { IHotels } from 'src/app/shared/interfaces/hotels.interface';
 	styleUrls: ['./room-card.component.less'],
 })
 export class RoomCardComponent implements OnInit {
-	@Input() hotel!: IHotels;
+	@Input() hotel!: IHotel;
 	ngOnInit(): void {
 		console.log('hotel: ', this.hotel);
 	}

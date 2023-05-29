@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { RoomCardInfoComponent } from './room-card-info.component';
+import { HotelCardInfoComponent } from './hotel-card-info.component';
 const routes: Routes = [
 	{
 		path: '',
-		component: RoomCardInfoComponent,
+		component: HotelCardInfoComponent,
 	},
 ];
 
@@ -12,4 +12,4 @@ const routes: Routes = [
 	imports: [RouterModule.forChild(routes)],
 	exports: [RouterModule],
 })
-export class RoomCardInfoRoutingModule {}
+export class HotelCardInfoRoutingModule {}
