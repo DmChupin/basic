@@ -1,25 +1,28 @@
-<div class="room-card-info_wrapper">
+<div class="hotel-card-info_wrapper">
 	<mat-grid-list cols="3" rowHeight="100">
 		<mat-grid-tile colspan="3" rowspan="5">
-			<div class="room-card-info_wrapper-gallery">
+			<div class="hotel-card-info_wrapper-gallery">
 				<ng-template
 					let-currentImage
 					let-next="next"
 					let-back="back"
 					[appCarousel]="images"
 				>
-					<button class="room-card-info_image-icons" (click)="back()">
+					<button
+						class="hotel-card-info_image-icons"
+						(click)="back()"
+					>
 						<mat-icon> </mat-icon>
 					</button>
 					<img
 						mat-card-image
 						alt="Product photo"
 						height="500px"
-						class="room-card-info_image"
+						class="hotel-card-info_image"
 						[src]="currentImage.url"
 					/>
 					<button
-						class="room-card-info_image-icons right"
+						class="hotel-card-info_image-icons right"
 						(click)="next()"
 					>
 						<mat-icon> </mat-icon>
@@ -70,7 +73,7 @@
 		</mat-grid-tile>
 		<mat-grid-tile colspan="1" rowspan="6">Booking info </mat-grid-tile>
 		<mat-grid-tile colspan="2" rowspan="3">
-			<div class="room-card-info_reviews">
+			<div class="hotel-card-info_reviews">
 				<h2>Reviews</h2>
 				<mat-list>
 					<mat-list-item>

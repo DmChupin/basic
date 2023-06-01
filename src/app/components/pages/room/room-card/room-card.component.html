@@ -6,8 +6,9 @@
 	>
 		<mat-icon>favorite</mat-icon>
 	</button>
+
 	<img mat-card-image src="{{ hotel.image }}" alt="Photo of a room" />
-	<div class="room-card__fields" [routerLink]="['/room']">
+	<div class="room-card__fields" [routerLink]="['/hotels/', hotel.id]">
 		<span class="room-card__hotel-name"> {{ hotel.name }} </span>
 		<span class="room-card__hotel-rating"> {{ hotel.rating }}/10 </span>
 	</div>

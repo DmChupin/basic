@@ -25,7 +25,7 @@ export class SignInComponent {
 			response => {
 				console.log('dataResp: ', response);
 				localStorage.setItem('jwt', response.token);
-				this.router.navigate(['/rooms']);
+				this.router.navigate(['/hotels']);
 			},
 			error => console.log('errorResp', error),
 		);
