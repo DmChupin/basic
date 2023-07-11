@@ -6,6 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { HotelCardInfoRoutingModule } from './hotel-card-info-routing.module';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatListModule } from '@angular/material/list';
+import { RoomListModule } from '../../room/room-list/room-list.module';
 
 @NgModule({
 	declarations: [HotelCardInfoComponent],
@@ -16,6 +17,7 @@ import { MatListModule } from '@angular/material/list';
 		HotelCardInfoRoutingModule,
 		MatGridListModule,
 		MatListModule,
+		RoomListModule,
 	],
 	exports: [HotelCardInfoComponent],
 })

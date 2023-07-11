@@ -72,28 +72,7 @@
 			</div>
 		</mat-grid-tile>
 		<mat-grid-tile colspan="1" rowspan="6">Booking info </mat-grid-tile>
-		<mat-grid-tile colspan="2" rowspan="3">
-			<div class="hotel-card-info_reviews">
-				<h2>Reviews</h2>
-				<mat-list>
-					<mat-list-item>
-						<mat-icon matListItemIcon> family_restroom </mat-icon>
-						<div matListItemTitle>Family room</div>
-						<div matListItemLine>Beds for every person</div>
-					</mat-list-item>
-					<mat-list-item>
-						<mat-icon matListItemIcon> family_restroom </mat-icon>
-						<div matListItemTitle>Family room</div>
-						<div matListItemLine>Beds for every person</div>
-					</mat-list-item>
-					<mat-list-item>
-						<mat-icon matListItemIcon> family_restroom </mat-icon>
-						<div matListItemTitle>Family room</div>
-						<div matListItemLine>Beds for every person</div>
-					</mat-list-item>
-				</mat-list>
-			</div>
-		</mat-grid-tile>
+		<mat-grid-tile colspan="2" rowspan="3"> </mat-grid-tile>
 		<mat-grid-tile colspan="1" rowspan="2">
 			<div>
 				<h2>Rights</h2>
@@ -128,4 +107,8 @@
 			</div>
 		</mat-grid-tile>
 	</mat-grid-list>
+
+	<div class="hotel-card-info_table">
+		<app-room-list [hotelId]="hotelId"></app-room-list>
+	</div>
 </div>
