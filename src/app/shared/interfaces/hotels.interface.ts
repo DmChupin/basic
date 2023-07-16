@@ -1,3 +1,5 @@
+import { IFacility } from './facility.interface';
+
 export interface IHotel {
 	id: number;
 	name: string;
@@ -6,4 +8,5 @@ export interface IHotel {
 	rating: number;
 	square: number;
 	image: string;
+	facilities: IFacility[] | [] | undefined;
 }
