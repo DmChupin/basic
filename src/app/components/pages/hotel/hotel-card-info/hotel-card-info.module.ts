@@ -7,6 +7,8 @@ import { HotelCardInfoRoutingModule } from './hotel-card-info-routing.module';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatListModule } from '@angular/material/list';
 import { RoomListModule } from '../../room/room-list/room-list.module';
+import { ReviewsModule } from '../../reviews/reviews.module';
+import { FacilitiesModule } from '../../facilities/facilities.module';
 
 @NgModule({
 	declarations: [HotelCardInfoComponent],
@@ -18,6 +20,8 @@ import { RoomListModule } from '../../room/room-list/room-list.module';
 		MatGridListModule,
 		MatListModule,
 		RoomListModule,
+		ReviewsModule,
+		FacilitiesModule,
 	],
 	exports: [HotelCardInfoComponent],
 })

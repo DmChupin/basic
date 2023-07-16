@@ -3,7 +3,6 @@ import { images } from './hotel-card-info.mock';
 import { HotelsService } from 'src/app/shared/services/hotels/hotels.service';
 import { ActivatedRoute } from '@angular/router';
 import { IHotel } from 'src/app/shared/interfaces/hotels.interface';
-import { Observable, switchMap } from 'rxjs';
 
 @Component({
 	selector: 'app-hotel-card-info',

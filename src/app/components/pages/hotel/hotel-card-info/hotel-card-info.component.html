@@ -32,43 +32,12 @@
 		</mat-grid-tile>
 		<mat-grid-tile colspan="1" rowspan="3">
 			<div>
-				<h2>RoomInfo</h2>
-				<mat-list>
-					<mat-list-item>
-						<mat-icon matListItemIcon> family_restroom </mat-icon>
-						<div matListItemTitle>Family room</div>
-						<div matListItemLine>Beds for every person</div>
-					</mat-list-item>
-					<mat-list-item>
-						<mat-icon matListItemIcon> family_restroom </mat-icon>
-						<div matListItemTitle>Family room</div>
-						<div matListItemLine>Beds for every person</div>
-					</mat-list-item>
-					<mat-list-item>
-						<mat-icon matListItemIcon> family_restroom </mat-icon>
-						<div matListItemTitle>Family room</div>
-						<div matListItemLine>Beds for every person</div>
-					</mat-list-item>
-				</mat-list>
+				<app-facilities [hotelId]="hotelId"></app-facilities>
 			</div>
 		</mat-grid-tile>
 		<mat-grid-tile colspan="1" rowspan="3">
 			<div>
-				<h2>Impressions</h2>
-				<mat-list>
-					<mat-list-item>
-						<div matListItemTitle>Overall score</div>
-						<div matListItemLine>5 / 5</div>
-					</mat-list-item>
-					<mat-list-item>
-						<div matListItemTitle>Cleaning</div>
-						<div matListItemLine>5 / 5</div>
-					</mat-list-item>
-					<mat-list-item>
-						<div matListItemTitle>Entertainments</div>
-						<div matListItemLine>5 / 5</div>
-					</mat-list-item>
-				</mat-list>
+				<app-reviews [hotelId]="hotelId"></app-reviews>
 			</div>
 		</mat-grid-tile>
 		<mat-grid-tile colspan="1" rowspan="6">Booking info </mat-grid-tile>

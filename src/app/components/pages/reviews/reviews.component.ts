@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { IReview } from 'src/app/shared/interfaces/review.interface';
+import { ReviewsService } from 'src/app/shared/services/reviews/reviews.service';
 
 @Component({
 	selector: 'app-reviews',
@@ -9,7 +11,7 @@ export class ReviewsComponent implements OnInit {
 	@Input()
 	hotelId!: number;
 
-	constructor(private readonly service: ReviewsService);
+	constructor(private readonly service: ReviewsService) {}
 
 	reviews: IReview[] = [];
 
@@ -18,6 +20,6 @@ export class ReviewsComponent implements OnInit {
 	}
 
 	getReviews() {
-		this.service.getReviews(this.hotelId).subscribe(reviews => (this.reviews = reviews));
+		this.service.getReviews({ hotelId: this.hotelId }).subscribe(reviews => (this.reviews = reviews));
 	}
 }
