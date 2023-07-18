@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IRoom } from '../../interfaces/rooms.interface';
-import { Observable } from 'rxjs';
+import { Observable, catchError } from 'rxjs';
+import { handleError } from '../../utils/error.handler';
 
 @Injectable({
 	providedIn: 'root',
@@ -11,6 +12,8 @@ export class RoomsService {
 
 	readonly baseUrl = 'http://localhost:7777/rooms';
 	getRooms(hotelId: number): Observable<IRoom[]> {
-		return this.httpClient.get<IRoom[]>(this.baseUrl, { params: { hotelId } });
+		return this.httpClient
+			.get<IRoom[]>(this.baseUrl, { params: { hotelId } })
+			.pipe(catchError(handleError<IRoom[]>('getRooms', [])));
 	}
 }

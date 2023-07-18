@@ -1,4 +1,4 @@
-<div class="hotel-card-info_wrapper">
+<!-- <div class="hotel-card-info_wrapper">
 	<mat-grid-list cols="3" rowHeight="100">
 		<mat-grid-tile colspan="3" rowspan="5">
 			<div class="hotel-card-info_wrapper-gallery">
@@ -40,43 +40,56 @@
 				<app-reviews [hotelId]="hotelId"></app-reviews>
 			</div>
 		</mat-grid-tile>
-		<mat-grid-tile colspan="1" rowspan="6">Booking info </mat-grid-tile>
-		<mat-grid-tile colspan="2" rowspan="3"> </mat-grid-tile>
-		<mat-grid-tile colspan="1" rowspan="2">
-			<div>
-				<h2>Rights</h2>
-				<mat-list role="list">
-					<mat-list-item role="listitem"
-						>Not allowed with pets</mat-list-item
-					>
-					<mat-list-item role="listitem"
-						>Not allowed with pets</mat-list-item
-					>
-					<mat-list-item role="listitem"
-						>Not allowed with pets</mat-list-item
-					>
-				</mat-list>
-			</div>
-		</mat-grid-tile>
-		<mat-grid-tile colspan="1" rowspan="2">
-			<div>
-				<h2>Decline</h2>
-				<div>
-					Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-					Animi omnis eveniet blanditiis obcaecati, commodi harum
-					optio, facere voluptates molestias neque, ratione ducimus
-					perspiciatis ipsa odio! Eos eum natus deleniti odit!
-				</div>
-				<div>
-					Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-					Animi omnis eveniet blanditiis obcaecati, commodi harum
-					optio, facere voluptates molestias neque, ratione ducimus
-					perspiciatis ipsa odio! Eos eum natus deleniti odit!
-				</div>
+		<mat-grid-tile colspan="1" rowspan="3">Booking info </mat-grid-tile>
+		<mat-grid-tile colspan="3" rowspan="3">
+			<div class="hotel-card-info_table">
+				<app-room-list [hotelId]="hotelId"></app-room-list>
 			</div>
 		</mat-grid-tile>
 	</mat-grid-list>
+</div> -->
 
+<div class="hotel-card-info_wrapper">
+	<div>
+		<div class="hotel-card-info_wrapper-gallery">
+			<ng-template
+				let-currentImage
+				let-next="next"
+				let-back="back"
+				[appCarousel]="images"
+			>
+				<button class="hotel-card-info_image-icons" (click)="back()">
+					<mat-icon> </mat-icon>
+				</button>
+				<img
+					mat-card-image
+					alt="Product photo"
+					height="500px"
+					class="hotel-card-info_image"
+					[src]="currentImage.url"
+				/>
+				<button
+					class="hotel-card-info_image-icons right"
+					(click)="next()"
+				>
+					<mat-icon> </mat-icon>
+				</button>
+			</ng-template>
+		</div>
+	</div>
+	<div class="hotel-card-info_wrapper-info">
+		<app-facilities [hotelId]="hotelId"></app-facilities>
+		<app-reviews [hotelId]="hotelId"></app-reviews>
+		<div class="hotel-card-info_booking-info">
+			<h2>Booking info</h2>
+			<p>
+				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor
+				autem dolorem, natus exercitationem inventore sunt pariatur.
+				Eius dolorem dolorum minus facilis, soluta officia iste
+				excepturi, id vitae quasi optio rerum.
+			</p>
+		</div>
+	</div>
 	<div class="hotel-card-info_table">
 		<app-room-list [hotelId]="hotelId"></app-room-list>
 	</div>
