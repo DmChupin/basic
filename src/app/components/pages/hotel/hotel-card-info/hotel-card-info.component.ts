@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { images } from './hotel-card-info.mock';
-import { HotelsService } from 'src/app/shared/services/hotels/hotels.service';
 import { ActivatedRoute } from '@angular/router';
-import { IHotel } from 'src/app/shared/interfaces/hotels.interface';
+import { HotelsStoreService } from 'src/app/shared/services/hotels/hotels-store.service';
 
 @Component({
 	selector: 'app-hotel-card-info',
@@ -10,17 +9,14 @@ import { IHotel } from 'src/app/shared/interfaces/hotels.interface';
 	styleUrls: ['./hotel-card-info.component.less'],
 })
 export class HotelCardInfoComponent implements OnInit {
-	constructor(private readonly service: HotelsService, private route: ActivatedRoute) {}
-
 	readonly images = images;
 	readonly hotelId: number = Number(this.route.snapshot.paramMap.get('id'));
-	hotel: Partial<IHotel> = {};
+
+	constructor(private readonly service: HotelsStoreService, private route: ActivatedRoute) {}
+
+	readonly hotel$ = this.service.hotel$;
 
 	ngOnInit(): void {
-		this.getHotel();
-	}
-
-	getHotel() {
-		this.service.getHotel(this.hotelId).subscribe(hotel => (this.hotel = hotel));
+		this.service.loadHotel(this.hotelId);
 	}
 }

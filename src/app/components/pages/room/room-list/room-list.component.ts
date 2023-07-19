@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IRoom } from 'src/app/shared/interfaces/rooms.interface';
-import { RoomsService } from 'src/app/shared/services/rooms/rooms.service';
+import { RoomsStoreService } from 'src/app/shared/services/rooms/rooms-store.service';
 
 @Component({
 	selector: 'app-room-list',
@@ -11,15 +10,12 @@ export class RoomListComponent implements OnInit {
 	@Input()
 	hotelId!: number;
 
-	data: IRoom[] = [];
+	constructor(private readonly service: RoomsStoreService) {}
 
-	constructor(private readonly service: RoomsService) {}
+	readonly rooms$ = this.service.rooms$;
 
 	ngOnInit(): void {
-		this.getRooms();
-	}
-	getRooms() {
-		this.service.getRooms(this.hotelId).subscribe(rooms => (this.data = rooms));
+		this.service.loadRooms(this.hotelId);
 	}
 
 	displayedColumns: string[] = ['type', 'sleeps', 'price', 'facilities', 'reserve'];

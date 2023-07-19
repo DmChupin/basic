@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IHotel } from 'src/app/shared/interfaces/hotels.interface';
-import { HotelsService } from 'src/app/shared/services/hotels/hotels.service';
+import { HotelsStoreService } from 'src/app/shared/services/hotels/hotels-store.service';
 
 @Component({
 	selector: 'app-hotel-list',
@@ -8,14 +7,11 @@ import { HotelsService } from 'src/app/shared/services/hotels/hotels.service';
 	styleUrls: ['./hotel-list.component.less'],
 })
 export class HotelListComponent implements OnInit {
-	constructor(private readonly service: HotelsService) {}
+	constructor(private readonly service: HotelsStoreService) {}
 
-	hotels: IHotel[] = [];
-	getHotels(): void {
-		this.service.getHotels().subscribe(hotels => (this.hotels = hotels));
-	}
+	readonly hotels$ = this.service.hotels$;
 
 	ngOnInit(): void {
-		this.getHotels();
+		this.service.loadHotels({});
 	}
 }

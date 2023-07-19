@@ -1,9 +1,16 @@
 <div class="hotel-list__wrapper">
 	<app-hotel-filters> </app-hotel-filters>
-	<div class="hotel-list__wrapper-cards">
+	<div
+		*ngIf="hotels$ | async as hotels; else loader"
+		class="hotel-list__wrapper-cards"
+	>
 		<app-room-card
 			*ngFor="let hotel of hotels"
 			[hotel]="hotel"
 		></app-room-card>
 	</div>
 </div>
+
+<ng-template #loader>
+	<mat-spinner></mat-spinner>
+</ng-template>

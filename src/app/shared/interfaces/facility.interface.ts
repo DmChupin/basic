@@ -3,4 +3,5 @@ export interface IFacility {
 	image: string;
 	name: string;
 	description: string;
+	hotelId: number;
 }

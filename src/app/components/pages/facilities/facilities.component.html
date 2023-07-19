@@ -1,6 +1,6 @@
 <div class="hotel-card-info_facilities">
 	<h2>Facilities</h2>
-	<mat-list>
+	<mat-list *ngIf="facilities$ | async as facilities">
 		<mat-list-item *ngFor="let facility of facilities">
 			<mat-icon matListItemIcon> {{ facility.image }} </mat-icon>
 			{{ facility.name }}

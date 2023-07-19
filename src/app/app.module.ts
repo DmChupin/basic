@@ -5,8 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderModule } from './components/common/header/header.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BaseUrlInterceptor } from './shared/utils/base-url/base-url.interceptor';
 
 @NgModule({
 	declarations: [AppComponent],
@@ -19,5 +20,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 		ReactiveFormsModule,
 	],
 	bootstrap: [AppComponent],
+	providers: [
+		{
+			provide: HTTP_INTERCEPTORS,
+			multi: true,
+			useClass: BaseUrlInterceptor,
+		},
+	],
 })
 export class AppModule {}

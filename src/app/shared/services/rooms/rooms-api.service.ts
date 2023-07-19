@@ -1,19 +1,18 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IRoom } from '../../interfaces/rooms.interface';
 import { Observable, catchError } from 'rxjs';
+import { IRoom } from '../../interfaces/rooms.interface';
 import { handleError } from '../../utils/error.handler';
 
 @Injectable({
 	providedIn: 'root',
 })
-export class RoomsService {
+export class RoomsApiService {
 	constructor(private readonly httpClient: HttpClient) {}
 
-	readonly baseUrl = 'http://localhost:7777/rooms';
-	getRooms(hotelId: number): Observable<IRoom[]> {
+	getRooms$(hotelId: number): Observable<IRoom[]> {
 		return this.httpClient
-			.get<IRoom[]>(this.baseUrl, { params: { hotelId } })
+			.get<IRoom[]>('/rooms', { params: { hotelId } })
 			.pipe(catchError(handleError<IRoom[]>('getRooms', [])));
 	}
 }

@@ -1,21 +1,18 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable, catchError } from 'rxjs';
 import { IFacility } from '../../interfaces/facility.interface';
-import { Observable } from 'rxjs/internal/Observable';
-import { catchError } from 'rxjs';
 import { handleError } from '../../utils/error.handler';
 
 @Injectable({
 	providedIn: 'root',
 })
-export class FacilitiesService {
+export class FacilitiesApiService {
 	constructor(private readonly httpClient: HttpClient) {}
 
-	readonly baseUrl = 'http://localhost:7777/facilities';
-
-	getFacilities(params: any): Observable<IFacility[] | []> {
+	getFacilities$(params: Partial<IFacility>): Observable<IFacility[]> {
 		return this.httpClient
-			.get<IFacility[] | []>(this.baseUrl, { params: { ...params } })
+			.get<IFacility[] | []>('/facilities', { params: { ...params } })
 			.pipe(catchError(handleError<IFacility[]>('getReviews', [])));
 	}
 }
