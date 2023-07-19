@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { IHotel } from 'src/app/shared/interfaces/hotels.interface';
 
 @Component({
@@ -6,9 +6,6 @@ import { IHotel } from 'src/app/shared/interfaces/hotels.interface';
 	templateUrl: './room-card.component.html',
 	styleUrls: ['./room-card.component.less'],
 })
-export class RoomCardComponent implements OnInit {
+export class RoomCardComponent {
 	@Input() hotel!: IHotel;
-	ngOnInit(): void {
-		console.log('hotel: ', this.hotel);
-	}
 }

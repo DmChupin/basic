@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ISignUpReq } from 'src/app/shared/interfaces/signup.interface';
 import { UsersService } from 'src/app/shared/services/users/users.service';
 
 @Component({
@@ -23,7 +22,6 @@ export class SignUpComponent {
 	});
 
 	register() {
-		console.log('signUpForm', this.signUpForm.value);
 		const { surname, name, password, male, email, dateOfBirth, notifications } = this.signUpForm.value;
 		this.service
 			.register({

@@ -1,6 +1,6 @@
 <div class="hotel-card-info_reviews">
 	<h2>Reviews</h2>
-	<mat-list>
+	<mat-list *ngIf="reviews$ | async as reviews">
 		<mat-list-item *ngFor="let review of reviews">
 			<mat-icon matListItemIcon> family_restroom </mat-icon>
 			<span matListItemTitle>

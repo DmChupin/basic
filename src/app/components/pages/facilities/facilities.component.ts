@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IFacility } from 'src/app/shared/interfaces/facility.interface';
-import { FacilitiesService } from 'src/app/shared/services/facilities/facilities.service';
+import { FacilitiesStoreService } from 'src/app/shared/services/facilities/facilities-store.service';
 
 @Component({
 	selector: 'app-facilities',
@@ -11,15 +10,11 @@ export class FacilitiesComponent implements OnInit {
 	@Input()
 	hotelId!: number;
 
-	constructor(private readonly service: FacilitiesService) {}
+	constructor(private readonly service: FacilitiesStoreService) {}
 
-	facilities: IFacility[] = [];
+	readonly facilities$ = this.service.facilities$;
 
 	ngOnInit(): void {
-		this.getFacilities();
-	}
-
-	getFacilities() {
-		this.service.getFacilities({ hotelId: this.hotelId }).subscribe(facilities => (this.facilities = facilities));
+		this.service.loadFacilities({ hotelId: this.hotelId });
 	}
 }

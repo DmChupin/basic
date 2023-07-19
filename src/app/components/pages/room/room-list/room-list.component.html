@@ -1,30 +1,32 @@
-<table mat-table class="mat-elevation-z8" [dataSource]="data">
-	<ng-container matColumnDef="type">
-		<th *matHeaderCellDef mat-header-cell>Room Type</th>
-		<td *matCellDef="let element" mat-cell>{{ element.type }}</td>
-	</ng-container>
+<div *ngIf="rooms$ | async as rooms">
+	<table mat-table class="mat-elevation-z8" [dataSource]="rooms">
+		<ng-container matColumnDef="type">
+			<th *matHeaderCellDef mat-header-cell>Room Type</th>
+			<td *matCellDef="let element" mat-cell>{{ element.type }}</td>
+		</ng-container>
 
-	<ng-container matColumnDef="sleeps">
-		<th *matHeaderCellDef mat-header-cell>Sleeps</th>
-		<td *matCellDef="let element" mat-cell>{{ element.sleeps }}</td>
-	</ng-container>
+		<ng-container matColumnDef="sleeps">
+			<th *matHeaderCellDef mat-header-cell>Sleeps</th>
+			<td *matCellDef="let element" mat-cell>{{ element.sleeps }}</td>
+		</ng-container>
 
-	<ng-container matColumnDef="price">
-		<th *matHeaderCellDef mat-header-cell>Price</th>
-		<td *matCellDef="let element" mat-cell>{{ element.price }}</td>
-	</ng-container>
+		<ng-container matColumnDef="price">
+			<th *matHeaderCellDef mat-header-cell>Price</th>
+			<td *matCellDef="let element" mat-cell>{{ element.price }}</td>
+		</ng-container>
 
-	<ng-container matColumnDef="facilities">
-		<th *matHeaderCellDef mat-header-cell>Your choice</th>
-		<td *matCellDef="let element" mat-cell>{{ element.facilities }}</td>
-	</ng-container>
+		<ng-container matColumnDef="facilities">
+			<th *matHeaderCellDef mat-header-cell>Your choice</th>
+			<td *matCellDef="let element" mat-cell>{{ element.facilities }}</td>
+		</ng-container>
 
-	<ng-container matColumnDef="reserve">
-		<th *matHeaderCellDef mat-header-cell></th>
-		<td *matCellDef="let element" mat-cell>
-			<button mat-button>reserve</button>
-		</td>
-	</ng-container>
-	<tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
-	<tr *matRowDef="let row; columns: displayedColumns" mat-row></tr>
-</table>
+		<ng-container matColumnDef="reserve">
+			<th *matHeaderCellDef mat-header-cell></th>
+			<td *matCellDef="let element" mat-cell>
+				<button mat-button>reserve</button>
+			</td>
+		</ng-container>
+		<tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+		<tr *matRowDef="let row; columns: displayedColumns" mat-row></tr>
+	</table>
+</div>
