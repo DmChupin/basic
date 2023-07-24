@@ -4,27 +4,38 @@
 
 		<mat-form-field class="login-form__label">
 			<mat-label>e-mail</mat-label>
-			<input matInput placeholder="" value="" [formControl]="email" />
+			<input
+				matInput
+				type="email"
+				placeholder="e-mail"
+				value=""
+				[formControl]="email"
+			/>
+			<mat-error
+				*ngIf="email.hasError('email') && !email.hasError('required')"
+			>
+				Please enter a valid email address
+			</mat-error>
+			<mat-error *ngIf="email.hasError('required')">
+				Email is <strong>required</strong>
+			</mat-error>
 		</mat-form-field>
 		<mat-form-field class="login-form__label">
 			<mat-label>password</mat-label>
-			<input matInput placeholder="" value="" [formControl]="password" />
+			<input
+				matInput
+				placeholder=""
+				type="password"
+				value=""
+				[formControl]="password"
+			/>
 		</mat-form-field>
-		<button
-			mat-raised-button
-			color="primary"
-			class="login-form__button"
-			(click)="login()"
-		>
+		<button mat-raised-button class="login-form__button" (click)="login()">
 			Sign In
 		</button>
 		<div class="login-form__account">
 			<span> Don't have an account?</span>
-			<button
-				mat-stroked-button
-				color="primary"
-				[routerLink]="['/sign-up']"
-			>
+			<button mat-stroked-button [routerLink]="['/sign-up']">
 				Sign up
 			</button>
 		</div>

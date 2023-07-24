@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsersService } from 'src/app/shared/services/users/users.service';
 
@@ -12,12 +12,12 @@ export class SignUpComponent {
 	constructor(private readonly service: UsersService, private router: Router) {}
 
 	signUpForm = new FormGroup({
-		surname: new FormControl(''),
-		name: new FormControl(''),
-		password: new FormControl(''),
+		surname: new FormControl('', Validators.required),
+		name: new FormControl('', Validators.required),
+		password: new FormControl('', Validators.required),
 		male: new FormControl('1'),
-		email: new FormControl(''),
-		dateOfBirth: new FormControl(),
+		email: new FormControl('', Validators.required),
+		dateOfBirth: new FormControl(null, Validators.required),
 		notifications: new FormControl(false),
 	});
 
@@ -36,8 +36,7 @@ export class SignUpComponent {
 			.subscribe(
 				response => {
 					console.log('dataResp: ', response);
-					localStorage.setItem('jwt', response.token);
-					this.router.navigate(['/hotels']);
+					this.router.navigate(['/sign-in']);
 				},
 				error => console.log('errorResp', error),
 			);

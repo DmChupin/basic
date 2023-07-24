@@ -43,6 +43,7 @@
 				<input
 					matInput
 					placeholder=""
+					type="email"
 					value=""
 					formControlName="email"
 				/>
@@ -52,18 +53,19 @@
 				<input
 					matInput
 					placeholder=""
+					type="password"
 					value=""
 					formControlName="password"
 				/>
 			</mat-form-field>
-			<mat-slide-toggle color="primary" formControlName="notifications"
+			<mat-slide-toggle formControlName="notifications"
 				>Get notifications</mat-slide-toggle
 			>
 		</form>
 
 		<button
 			mat-raised-button
-			color="primary"
+			color="basic"
 			class="login-form__button"
 			(click)="register()"
 		>
@@ -71,11 +73,7 @@
 		</button>
 		<div class="login-form__account">
 			<span> Do you already have an account?</span>
-			<button
-				mat-stroked-button
-				color="primary"
-				[routerLink]="['/sign-in']"
-			>
+			<button mat-stroked-button [routerLink]="['/sign-in']">
 				Sign in
 			</button>
 		</div>
