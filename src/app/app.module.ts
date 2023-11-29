@@ -9,25 +9,9 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BaseUrlInterceptor } from './shared/utils/base-url/base-url.interceptor';
 import { JwtTokenInterceptor } from './shared/utils/jwt-token/jwt-token.interceptor';
-import { StoreModule } from '@ngrx/store';
-import { EffectsModule } from '@ngrx/effects';
-import { StoreRouterConnectingModule } from '@ngrx/router-store';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-
 @NgModule({
 	declarations: [AppComponent],
-	imports: [
-		BrowserModule,
-		AppRoutingModule,
-		BrowserAnimationsModule,
-		HeaderModule,
-		HttpClientModule,
-		ReactiveFormsModule,
-		StoreModule.forRoot({}, {}),
-		EffectsModule.forRoot([]),
-		StoreRouterConnectingModule.forRoot(),
-		StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
-	],
+	imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, HeaderModule, HttpClientModule],
 	bootstrap: [AppComponent],
 	providers: [
 		{
