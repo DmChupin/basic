@@ -18,6 +18,7 @@ interface ICarouselContext<T> {
 }
 @Directive({
 	selector: '[appCarousel]',
+	standalone: true,
 })
 export class CarouselDirective<T> implements OnChanges, OnDestroy, OnInit {
 	@Input() appCarousel: T[] | undefined;

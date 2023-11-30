@@ -9,8 +9,15 @@ import { SignInRoutingModule } from './sign-in-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-	declarations: [SignInComponent],
-	imports: [CommonModule, MatInputModule, MatButtonModule, RouterModule, SignInRoutingModule, ReactiveFormsModule],
+	imports: [
+		CommonModule,
+		MatInputModule,
+		MatButtonModule,
+		RouterModule,
+		SignInRoutingModule,
+		ReactiveFormsModule,
+		SignInComponent,
+	],
 	exports: [SignInComponent],
 })
 export class SignInModule {}

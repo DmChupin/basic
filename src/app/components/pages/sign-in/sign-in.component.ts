@@ -1,14 +1,20 @@
 import { Component } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
+import { Router, RouterLink } from '@angular/router';
 import { ISignInReq } from 'src/app/shared/interfaces/signin.interface';
 import { UsersService } from 'src/app/shared/services/users/users.service';
 import { MyErrorStateMatcher } from 'src/app/shared/utils/error-form-control.handler';
+import { MatButtonModule } from '@angular/material/button';
+import { NgIf } from '@angular/common';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @Component({
 	selector: 'app-sign-in',
 	templateUrl: './sign-in.component.html',
 	styleUrls: ['./sign-in.component.less'],
+	standalone: true,
+	imports: [MatFormFieldModule, MatInputModule, ReactiveFormsModule, NgIf, MatButtonModule, RouterLink],
 })
 export class SignInComponent {
 	constructor(private readonly service: UsersService, private router: Router) {}

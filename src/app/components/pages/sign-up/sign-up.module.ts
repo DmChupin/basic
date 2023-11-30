@@ -14,7 +14,6 @@ import { SignUpRoutingModule } from './sign-up-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-	declarations: [SignUpComponent],
 	imports: [
 		CommonModule,
 		MatButtonModule,
@@ -27,6 +26,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 		RouterModule,
 		SignUpRoutingModule,
 		ReactiveFormsModule,
+		SignUpComponent,
 	],
 	exports: [SignUpComponent],
 })
