@@ -1,10 +1,26 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @Component({
 	selector: 'app-hotel-filters',
 	templateUrl: './hotel-filters.component.html',
 	styleUrls: ['./hotel-filters.component.less'],
+	standalone: true,
+	imports: [
+		ReactiveFormsModule,
+		MatFormFieldModule,
+		MatInputModule,
+		MatDatepickerModule,
+		MatDividerModule,
+		MatCheckboxModule,
+		MatButtonModule,
+	],
 })
 export class RoomFiltersComponent {
 	filterFormGroup = new FormGroup({
